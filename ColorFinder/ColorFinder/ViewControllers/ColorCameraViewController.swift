@@ -46,47 +46,48 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
         self.navigationController?.navigationBar.isHidden = true
         if sessionManager == nil {
             sessionManager = CameraSessionManager.init()
+            sessionManager.previewLayer.isHidden = false
+            sessionManager.shouldStopDelegate = true
+            sessionManager.startSession()
+            // Do any additional setup after loading the view.
+            namePlateView.layer.cornerRadius = 8;
+            namePlateView.layer.masksToBounds = true
+            namePlateView.layer.borderWidth = 0.75;
+            namePlateView.layer.borderColor = UIColor.gray.cgColor
+            colorIndicatorView.layer.cornerRadius = 15
+            colorIndicatorView.layer.masksToBounds = true
+            colorIndicatorView.layer.borderColor = UIColor.green.cgColor
+            colorIndicatorView.layer.borderWidth = 0.75
+            let radius = sampleView.bounds.size.width / 2
+            let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.sampleView.bounds.size.width,
+                                                        height: self.sampleView.bounds.size.height), cornerRadius: 0)
+            let circlePath = UIBezierPath(roundedRect: CGRect(x: 10, y: 10, width: 2 * radius - 20,
+                                                              height: 2 * radius - 20), cornerRadius: radius - 10)
+            path.append(circlePath)
+            path.usesEvenOddFillRule = true
+            
+            
+            fillLayer.path = path.cgPath
+            fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
+            fillLayer.opacity = 1
+            sampleView.layer.addSublayer(fillLayer)
+            sampleView.backgroundColor = UIColor.clear
+            self.sessionManager.videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.global())
+        } else {
+            sessionManager.startSession()
         }
-        sessionManager.previewLayer.isHidden = false
-        sessionManager.shouldStopDelegate = true
-        sessionManager.startSession()
-        // Do any additional setup after loading the view.
-        namePlateView.layer.cornerRadius = 8;
-        namePlateView.layer.masksToBounds = true
-        namePlateView.layer.borderWidth = 0.75;
-        namePlateView.layer.borderColor = UIColor.gray.cgColor
-        colorIndicatorView.layer.cornerRadius = 15
-        colorIndicatorView.layer.masksToBounds = true
-        colorIndicatorView.layer.borderColor = UIColor.green.cgColor
-        colorIndicatorView.layer.borderWidth = 0.75
-        let radius = sampleView.bounds.size.width / 2
-        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.sampleView.bounds.size.width,
-                                                    height: self.sampleView.bounds.size.height), cornerRadius: 0)
-        let circlePath = UIBezierPath(roundedRect: CGRect(x: 10, y: 10, width: 2 * radius - 20,
-                                                          height: 2 * radius - 20), cornerRadius: radius - 10)
-        path.append(circlePath)
-        path.usesEvenOddFillRule = true
-        
-        
-        fillLayer.path = path.cgPath
-        fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
-        fillLayer.opacity = 1
-        sampleView.layer.addSublayer(fillLayer)
-        sampleView.backgroundColor = UIColor.clear
-        
-        self.sessionManager.videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.global())
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
-        
+        self.sessionManager.stopSession()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-         _   = IH.hasTopNotch
+         _ = IH.hasTopNotch
         sessionManager.previewLayer.bounds = self.previewLayerParent.frame
         sessionManager.previewLayer.position = self.previewLayerParent.center;
         sessionManager.previewLayer.masksToBounds = true

@@ -18,6 +18,9 @@ class InterfaceHelper: NSObject {
     static let MS_HLFW =  UIScreen.main.bounds.width / 2
     
     typealias IH = InterfaceHelper
+    static let DOC_PATH = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
+    
     static func set(Safearea layouts:[NSLayoutConstraint]){
         if !IH.hasTopNotch {
             for layout in layouts {
@@ -42,6 +45,16 @@ class InterfaceHelper: NSObject {
         }
     }
     
+    static func randomStr(_ n: Int) -> String {
+        let a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        var s = ""
+        for _ in 0..<n {
+            let r = Int(arc4random_uniform(UInt32(a.count)))
+            s += String(a[a.index(a.startIndex, offsetBy: r)])
+        }
+        
+        return s
+    }
     
     static func animateOpacity(toInvisible animateView:UIView,
                                atDuration duratino:CGFloat,
@@ -130,4 +143,45 @@ class InterfaceHelper: NSObject {
         }
     }
 
+}
+extension String {
+    subscript(value: NSRange) -> Substring {
+        return self[value.lowerBound..<value.upperBound]
+    }
+}
+
+extension String {
+    subscript(value: CountableClosedRange<Int>) -> Substring {
+        get {
+            return self[index(at: value.lowerBound)...index(at: value.upperBound)]
+        }
+    }
+    
+    subscript(value: CountableRange<Int>) -> Substring {
+        get {
+            return self[index(at: value.lowerBound)..<index(at: value.upperBound)]
+        }
+    }
+    
+    subscript(value: PartialRangeUpTo<Int>) -> Substring {
+        get {
+            return self[..<index(at: value.upperBound)]
+        }
+    }
+    
+    subscript(value: PartialRangeThrough<Int>) -> Substring {
+        get {
+            return self[...index(at: value.upperBound)]
+        }
+    }
+    
+    subscript(value: PartialRangeFrom<Int>) -> Substring {
+        get {
+            return self[index(at: value.lowerBound)...]
+        }
+    }
+    
+    func index(at offset: Int) -> String.Index {
+        return index(startIndex, offsetBy: offset)
+    }
 }

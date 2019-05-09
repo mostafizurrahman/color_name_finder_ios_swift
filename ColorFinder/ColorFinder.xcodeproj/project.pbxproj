@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393D308C2283DA9900D7DEB9 /* ColorSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308B2283DA9900D7DEB9 /* ColorSaver.swift */; };
+		393D308E2283DAAD00D7DEB9 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */; };
+		393D30902283DAC100D7DEB9 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308F2283DAC100D7DEB9 /* ColorData.swift */; };
+		3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943BCD02283F916009F47B4 /* SwiftyJSON.swift */; };
 		BE5D716D222E94A000F200DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D716C222E94A000F200DE /* AppDelegate.swift */; };
 		BE5D716F222E94A000F200DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D716E222E94A000F200DE /* ViewController.swift */; };
 		BE5D7172222E94A000F200DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5D7170222E94A000F200DE /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393D308B2283DA9900D7DEB9 /* ColorSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSaver.swift; sourceTree = "<group>"; };
+		393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
+		393D308F2283DAC100D7DEB9 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
+		3943BCD02283F916009F47B4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BE5D7169222E94A000F200DE /* ColorFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5D716C222E94A000F200DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5D716E222E94A000F200DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +79,10 @@
 				BE5D717E222E94C500F200DE /* SystemUI */,
 				BE5D7178222E94A300F200DE /* Info.plist */,
 				BE5D7185222E95DE00F200DE /* ColorFinder-Bridging-Header.h */,
+				393D308B2283DA9900D7DEB9 /* ColorSaver.swift */,
+				393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */,
+				393D308F2283DAC100D7DEB9 /* ColorData.swift */,
+				3943BCD02283F916009F47B4 /* SwiftyJSON.swift */,
 			);
 			path = ColorFinder;
 			sourceTree = "<group>";
@@ -171,8 +183,12 @@
 				BE5D7182222E95A200F200DE /* ColorCameraViewController.swift in Sources */,
 				BE5D7184222E95C300F200DE /* CameraSessionManager.swift in Sources */,
 				BE5D7188222E95DF00F200DE /* DBColorNames.m in Sources */,
+				3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */,
 				BE5D716F222E94A000F200DE /* ViewController.swift in Sources */,
 				BE5D716D222E94A000F200DE /* AppDelegate.swift in Sources */,
+				393D30902283DAC100D7DEB9 /* ColorData.swift in Sources */,
+				393D308E2283DAAD00D7DEB9 /* ColorGenerator.swift in Sources */,
+				393D308C2283DA9900D7DEB9 /* ColorSaver.swift in Sources */,
 				BE5D718A222EA4E400F200DE /* InterfaceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

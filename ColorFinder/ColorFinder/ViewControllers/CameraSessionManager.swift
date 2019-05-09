@@ -37,6 +37,9 @@ class CameraSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         
     }
 
+    
+
+    
     func initializeSession(){
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = AVCaptureSession.Preset.high
