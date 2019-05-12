@@ -68,7 +68,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="agO-53-OY4">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="agO-53-OY4" customClass="ColorCell">
                                         <rect key="frame" x="1.5" y="0.0" width="372" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -199,9 +199,36 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2W-BF-QUh">
-                                                                    <rect key="frame" x="326" y="66" width="30" height="30"/>
-                                                                    <state key="normal" title="---"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2W-BF-QUh" customClass="BorderButton" customModule="ColorFinder" customModuleProvider="target">
+                                                                    <rect key="frame" x="316" y="56" width="40" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="Fxq-M9-V3X"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="wIg-RR-Ydv"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
+                                                                    <state key="normal" title="COPY">
+                                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="20"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="2"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="topGColor">
+                                                                            <color key="value" red="1" green="0.4212953706" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="bottomGColor">
+                                                                            <color key="value" red="0.072803392189999996" green="0.51237406500000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="innerGColor">
+                                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="copyToClipboard:" destination="agO-53-OY4" eventType="touchUpInside" id="xSM-E9-RtW"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,6 +274,21 @@
                                             <constraint firstItem="M6A-mA-Guh" firstAttribute="centerY" secondItem="agO-53-OY4" secondAttribute="centerY" id="V4r-ng-B88"/>
                                             <constraint firstItem="M6A-mA-Guh" firstAttribute="width" secondItem="agO-53-OY4" secondAttribute="width" id="cma-RI-t1D"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="blue" destination="Oeh-5M-5jV" id="2RC-Sy-jbZ"/>
+                                            <outlet property="bottomColorView" destination="cH5-Ey-Qb9" id="gBK-YO-QdP"/>
+                                            <outlet property="colorParentView" destination="M6A-mA-Guh" id="0oi-os-fOO"/>
+                                            <outlet property="colorValue" destination="JBD-7i-6gO" id="1Iy-Ze-9sL"/>
+                                            <outlet property="colorView" destination="tcK-mJ-a7k" id="S5l-Xi-3Zz"/>
+                                            <outlet property="green" destination="bTZ-Xl-sqo" id="o5c-Qn-wnq"/>
+                                            <outlet property="homoColor" destination="o22-sk-rJe" id="1s6-wz-YMR"/>
+                                            <outlet property="homoColorView" destination="Cf4-C7-x1k" id="sUb-N3-eM6"/>
+                                            <outlet property="invertColor" destination="IiJ-P1-UEL" id="fEx-WS-6hm"/>
+                                            <outlet property="invertColorView" destination="KuV-cv-cHI" id="rvp-X5-2uj"/>
+                                            <outlet property="red" destination="qtg-Bn-KLM" id="nmW-4G-hyf"/>
+                                            <outlet property="shadowColor" destination="c3P-aI-d85" id="dyA-uH-Ohe"/>
+                                            <outlet property="shadowColorView" destination="qB7-0w-7MF" id="uGk-er-ESK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -261,6 +303,9 @@
                         <viewLayoutGuide key="safeArea" id="sVv-8I-x1Y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Find" id="CGd-UY-hs4"/>
+                    <connections>
+                        <outlet property="colorCollectionView" destination="2uY-Ef-1ko" id="3Wd-jO-N6D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at0-kp-Qm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

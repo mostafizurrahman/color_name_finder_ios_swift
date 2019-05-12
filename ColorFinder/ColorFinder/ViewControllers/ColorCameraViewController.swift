@@ -234,7 +234,6 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
             let action = UIAlertAction(title: "CONTINUE", style: .default, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
-            
             let notification = Notification.init(name: Notification.Name.init("color_saved"))
             NotificationCenter.default.post(notification)
         }

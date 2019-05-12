@@ -9,11 +9,18 @@
 import UIKit
 
 class ColorListViewController: UIViewController {
-
+    let saver = ColorSaver.shared
+    let dataLoader = ColorData.shared
+    @IBOutlet weak var colorCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let notname = Notification.Name.init("color_saved")
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadColor(_ :)), name: notname, object: nil)
+    }
+    @objc func reloadColor(_ not:Notification){
+        self.colorCollectionView.reloadData()
     }
     
 
@@ -27,4 +34,20 @@ class ColorListViewController: UIViewController {
     }
     */
 
+}
+
+extension ColorListViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataLoader.colorDataArray.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as! ColorCell
+        
+        
+        return cell
+    }
+    
 }
