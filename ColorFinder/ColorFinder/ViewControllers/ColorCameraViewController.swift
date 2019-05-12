@@ -218,6 +218,29 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
     @IBOutlet weak var namePlateView: UIView!
     
     
+    @IBAction func saveColor(_ sender: Any) {
+        let color = Color(r: Int(self.last_rgb.red * 2.55),
+                              g: Int(self.last_rgb.green * 2.55),
+                              b: Int(self.last_rgb.blue * 2.55))
+        if ColorData.shared.add(Color: color) {
+            let alert = UIAlertController(title: "Color saved to color bank",
+                                          message: "Continue to capture nature colors...",
+                                          preferredStyle: .actionSheet)
+            if let pop = alert.popoverPresentationController {
+                pop.permittedArrowDirections = []
+                pop.sourceView = self.view
+                pop.sourceRect = CGRect(origin: CGPoint(x: self.view.frame.midX, y: self.view.frame.midY), size: .zero)
+            }
+            let action = UIAlertAction(title: "CONTINUE", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            
+            let notification = Notification.init(name: Notification.Name.init("color_saved"))
+            NotificationCenter.default.post(notification)
+        }
+    }
+    
+    
     @IBAction func exitColorCamera(_ sender: Any) {
         if let navigation = self.navigationController {
             if navigation.viewControllers.count == 1{
