@@ -30,12 +30,12 @@ class ColorGenerator: NSObject {
         return data
     }
     
-    static func ColorShade(red:UInt8, green:UInt8, blue:UInt8, blackPercent:Float )->CRGB{
-        let value = UInt8(blackPercent > 100 ? 100 : blackPercent)
-
-        let cr:UInt8 = red * value / 100 // CGFloat(red) / 255.0 * percent
-        let cg:UInt8 = green * value / 100 //CGFloat(green) / 255.0 * percent
-        let cb:UInt8 = blue * value / 100 // CGFloat(blue) / 255.0 * percent
+    static func ColorShade(red:UInt8, green:UInt8, blue:UInt8, blackPercent:UInt8 )->CRGB{
+//        let value = UInt8(blackPercent > 100 ? 100 : blackPercent)
+  
+        let cr:UInt8 = UInt8(Float(Int(red) * Int(blackPercent)) / 100.0) // CGFloat(red) / 255.0 * percent
+        let cg:UInt8 = UInt8(Float(Int(green) * Int(blackPercent)) / 100.0) //CGFloat(green) / 255.0 * percent
+        let cb:UInt8 = UInt8(Float(Int(blue) * Int(blackPercent)) / 100.0) // CGFloat(blue) / 255.0 * percent
         var color:CRGB = CRGB()
         color.r = cr
         color.b = cb

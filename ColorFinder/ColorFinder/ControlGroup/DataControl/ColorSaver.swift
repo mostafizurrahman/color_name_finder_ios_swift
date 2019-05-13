@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorSaver: NSObject {
+class ColorSaver {
 
     typealias IH = InterfaceHelper
     //MARK:DELETE,SAVE,UPDATE
@@ -19,8 +19,7 @@ class ColorSaver: NSObject {
     
     var jsonData:JSON?
     let colorData = ColorData.shared
-    override init() {
-        super.init()
+    init() {
         self.isReadData = self.setJSON()
     }
     

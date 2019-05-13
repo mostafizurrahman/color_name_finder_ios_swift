@@ -72,22 +72,24 @@ class ColorData: NSObject {
     
     static let shared = ColorData()
     var colorDataArray:[Color] = []
-    let saver = ColorSaver.shared
+//    let saver = ColorSaver.shared
     override init() {
         super.init()
     }
     
     func add(Color color:Color)->Bool {
-        let saved = self.saver.save(Color: color)
+        let saver = ColorSaver.shared
+        let saved = saver.save(Color: color)
         colorDataArray.append(color)
         return saved
     }
     
     func delete(Color color:Color)->Bool{
+        let saver = ColorSaver.shared
         self.colorDataArray = self.colorDataArray.filter({ (_color) -> Bool in
             return !_color.color_id.elementsEqual(color.color_id)
         })
-        let deleted = self.saver.delete(Color: color)
+        let deleted = saver.delete(Color: color)
         return deleted
     }
 }
