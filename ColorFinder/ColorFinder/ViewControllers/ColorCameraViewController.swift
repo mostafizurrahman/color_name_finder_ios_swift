@@ -212,7 +212,6 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.captureColor(UIButton())
     }
     
     @IBOutlet weak var namePlateView: UIView!
@@ -225,8 +224,10 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
         let color = Color(r: Int(self.last_rgb.red * 255),
                               g: Int(self.last_rgb.green * 255),
                               b: Int(self.last_rgb.blue * 255), _title: cname)
+        
+        UIPasteboard.general.string = color.toColor().hexString.replacingOccurrences(of: "#", with: "")
         if ColorData.shared.add(Color: color) {
-            let alert = UIAlertController(title: "Color saved to color bank",
+            let alert = UIAlertController(title: "COLOR SAVED & COPIED",
                                           message: "Continue to capture nature colors...",
                                           preferredStyle: .actionSheet)
             if let pop = alert.popoverPresentationController {
@@ -261,13 +262,6 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
         }
     }
     
-    @IBAction func captureColor(_ sender: Any) {
-        let pickedColor = UIColor.init(red: self.last_rgb.red,
-                                       green: self.last_rgb.green,
-                                       blue: self.last_rgb.blue,
-                                       alpha: 1)
-        
-    }
     
     var last_rgb:LastRGB = LastRGB.init(r: 0, g: 0, b: 0)
     struct LastRGB {

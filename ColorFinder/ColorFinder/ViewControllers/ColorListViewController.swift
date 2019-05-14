@@ -9,10 +9,13 @@
 import UIKit
 
 class ColorListViewController: UIViewController {
+    
     let saver = ColorSaver.shared
     let dataLoader = ColorData.shared
     let colorNameObject = DBColorNames()
+    
     @IBOutlet weak var colorCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()

@@ -69,6 +69,12 @@ class ColorCell: UICollectionViewCell {
     @IBOutlet weak var blueview: UIView!
     
     @IBAction func copyToClipboard(_ sender: Any) {
+        guard let color = self.color else {return}
+         UIPasteboard.general.string = color.toColor().hexString.replacingOccurrences(of: "#", with: "")
+        self.colorTittle.text = "Color copied!"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.colorTittle.text = color.colorTitle
+        }
     }
     
     override func awakeFromNib() {

@@ -12,6 +12,7 @@ class CombinationViewController: UIViewController {
     
     var colorData:Color?
     
+    
     @IBOutlet weak var colorDetails: UILabel!
     @IBOutlet weak var bottomPicker: ColorIndicatorView!
     @IBOutlet weak var bottom2Picker: ColorIndicatorView!

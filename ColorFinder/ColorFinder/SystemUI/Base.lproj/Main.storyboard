@@ -105,7 +105,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="372" height="70"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2W-BF-QUh" customClass="BorderButton" customModule="ColorFinder" customModuleProvider="target">
-                                                                    <rect key="frame" x="314" y="16" width="40" height="40"/>
+                                                                    <rect key="frame" x="316" y="15" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="Fxq-M9-V3X"/>
                                                                         <constraint firstAttribute="height" constant="40" id="wIg-RR-Ydv"/>
@@ -136,7 +136,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-7i-6gO">
-                                                                    <rect key="frame" x="267" y="27.5" width="39" height="17"/>
+                                                                    <rect key="frame" x="269" y="26.5" width="39" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -151,12 +151,12 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="06m-7i-69h"/>
-                                                                <constraint firstAttribute="bottom" secondItem="M2W-BF-QUh" secondAttribute="bottom" constant="14" id="BlN-Q9-2wL"/>
+                                                                <constraint firstItem="M2W-BF-QUh" firstAttribute="centerY" secondItem="tcK-mJ-a7k" secondAttribute="centerY" id="LN7-Zd-mLt"/>
                                                                 <constraint firstItem="lb8-4U-FsT" firstAttribute="centerY" secondItem="tcK-mJ-a7k" secondAttribute="centerY" id="T2r-qv-nBp"/>
                                                                 <constraint firstItem="M2W-BF-QUh" firstAttribute="leading" secondItem="JBD-7i-6gO" secondAttribute="trailing" constant="8" id="U4Y-Kg-36m"/>
                                                                 <constraint firstItem="JBD-7i-6gO" firstAttribute="centerY" secondItem="M2W-BF-QUh" secondAttribute="centerY" id="UeY-Om-Rsq"/>
                                                                 <constraint firstItem="lb8-4U-FsT" firstAttribute="leading" secondItem="tcK-mJ-a7k" secondAttribute="leading" constant="16" id="bs7-hi-QtG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="M2W-BF-QUh" secondAttribute="trailing" constant="18" id="e45-3E-iy5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="M2W-BF-QUh" secondAttribute="trailing" constant="16" id="e45-3E-iy5"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nye-Os-bHh">
@@ -398,13 +398,43 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smc-aF-eqU" customClass="BorderButton" customModule="ColorFinder" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="531" width="250" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Az0-D5-4Q7"/>
+                                    <constraint firstAttribute="width" constant="250" id="EEX-aX-Q0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Save Color">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topGColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGColor">
+                                        <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerGColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveColor:" destination="y1d-sb-nPI" eventType="touchUpInside" id="qVe-3d-FXl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="B5p-k0-2Jb" firstAttribute="leading" secondItem="ZgH-W9-oRn" secondAttribute="trailing" constant="16" id="4jL-2F-H1S"/>
+                            <constraint firstItem="Smc-aF-eqU" firstAttribute="centerX" secondItem="BJt-7h-Hux" secondAttribute="centerX" id="73Z-tF-aSL"/>
                             <constraint firstItem="Wjg-x4-rxc" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="7Jp-k4-NJp"/>
                             <constraint firstItem="tfy-tS-M69" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="88n-SX-xRL"/>
                             <constraint firstItem="ZgH-W9-oRn" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="C2d-cD-RgL"/>
+                            <constraint firstItem="BJt-7h-Hux" firstAttribute="bottom" secondItem="Smc-aF-eqU" secondAttribute="bottom" constant="42" id="HxR-Wf-YWt"/>
                             <constraint firstItem="1sD-Qn-wqv" firstAttribute="top" secondItem="d8T-mW-c5p" secondAttribute="bottom" constant="16" id="KXc-g2-3l5"/>
                             <constraint firstItem="ZgH-W9-oRn" firstAttribute="top" secondItem="Wjg-x4-rxc" secondAttribute="bottom" constant="16" id="TIf-K1-3ed"/>
                             <constraint firstItem="1sD-Qn-wqv" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="30" id="XRK-9H-j3Y"/>
@@ -422,8 +452,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="dv0-FC-tpo"/>
                     <connections>
+                        <outlet property="_rgb" destination="EEX-aX-Q0g" id="cWN-Ye-6OX"/>
                         <outlet property="bLabel" destination="kej-BE-hf4" id="IC0-px-02z"/>
                         <outlet property="colorIndicatorView" destination="ZgH-W9-oRn" id="9IA-e6-imD"/>
+                        <outlet property="colorSaveButton" destination="Smc-aF-eqU" id="p5O-SW-fKr"/>
                         <outlet property="colorSquarePicker" destination="tfy-tS-M69" id="lcU-RP-sQe"/>
                         <outlet property="gLabel" destination="dYJ-Gd-whO" id="wVM-c0-rQO"/>
                         <outlet property="hLabel" destination="VMd-W1-LOo" id="GTW-Aw-BUR"/>
@@ -608,7 +640,6 @@
                                     <segment title="Invert Colors"/>
                                     <segment title="Shade Colors"/>
                                 </segments>
-                                <color key="tintColor" red="0.52734375" green="0.053999779929577461" blue="0.0020631602112676055" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="changeColorType:" destination="C0z-TC-OZP" eventType="valueChanged" id="sq7-EA-Q54"/>
                                 </connections>
