@@ -15,7 +15,7 @@ class ColorListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
-        let __thumb_height = CGFloat(220)
+        let __thumb_height = CGFloat(177)
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             let __width = (UIScreen.main.bounds.width - 60) / 2
