@@ -299,12 +299,139 @@
                     <connections>
                         <segue destination="Lb2-pi-hAY" kind="relationship" relationship="viewControllers" id="LLA-T7-UMW"/>
                         <segue destination="VGz-zc-5Yf" kind="relationship" relationship="viewControllers" id="Zxb-Q1-Ted"/>
-                        <segue destination="UzB-E3-1Tt" kind="relationship" relationship="viewControllers" id="dB3-QE-sZj"/>
+                        <segue destination="y1d-sb-nPI" kind="relationship" relationship="viewControllers" id="JAZ-Hh-L3J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAH-5t-kaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286" y="-201"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="SlB-lC-FFN">
+            <objects>
+                <viewController id="y1d-sb-nPI" customClass="ColorPickerViewController" customModule="ColorFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ET-73-cBe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfy-tS-M69" customClass="ColorSquarePicker" customModule="ColorFinder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="343" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="2MX-g8-P9R"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="colorSquarePickerValueChanged:" destination="y1d-sb-nPI" eventType="valueChanged" id="CWp-kz-JfZ"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjg-x4-rxc" customClass="ColorBarPicker" customModule="ColorFinder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="258" width="343" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4jQ-WG-IQg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="colorBarPickerValueChanged:" destination="y1d-sb-nPI" eventType="valueChanged" id="b55-yC-djn"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-k0-2Jb">
+                                <rect key="frame" x="67" y="351.5" width="72" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgH-W9-oRn" customClass="ColorIndicatorView" customModule="ColorFinder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="344" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4VI-FJ-YXu"/>
+                                    <constraint firstAttribute="width" constant="35" id="md4-Yp-t1u"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1sD-Qn-wqv">
+                                <rect key="frame" x="30" y="424" width="340" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMd-W1-LOo">
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f22-tE-KXq">
+                                        <rect key="frame" x="113.5" y="0.0" width="113" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnP-iJ-T82">
+                                        <rect key="frame" x="226.5" y="0.0" width="113.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-mW-c5p">
+                                <rect key="frame" x="30" y="388" width="315" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-Tg-gPe">
+                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYJ-Gd-whO">
+                                        <rect key="frame" x="113.5" y="0.0" width="88" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kej-BE-hf4">
+                                        <rect key="frame" x="227.5" y="0.0" width="87.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B5p-k0-2Jb" firstAttribute="leading" secondItem="ZgH-W9-oRn" secondAttribute="trailing" constant="16" id="4jL-2F-H1S"/>
+                            <constraint firstItem="Wjg-x4-rxc" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="7Jp-k4-NJp"/>
+                            <constraint firstItem="tfy-tS-M69" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="88n-SX-xRL"/>
+                            <constraint firstItem="ZgH-W9-oRn" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="16" id="C2d-cD-RgL"/>
+                            <constraint firstItem="1sD-Qn-wqv" firstAttribute="top" secondItem="d8T-mW-c5p" secondAttribute="bottom" constant="16" id="KXc-g2-3l5"/>
+                            <constraint firstItem="ZgH-W9-oRn" firstAttribute="top" secondItem="Wjg-x4-rxc" secondAttribute="bottom" constant="16" id="TIf-K1-3ed"/>
+                            <constraint firstItem="1sD-Qn-wqv" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="30" id="XRK-9H-j3Y"/>
+                            <constraint firstItem="BJt-7h-Hux" firstAttribute="trailing" secondItem="1sD-Qn-wqv" secondAttribute="trailing" constant="5" id="YxX-Hx-PJ6"/>
+                            <constraint firstItem="BJt-7h-Hux" firstAttribute="trailing" secondItem="tfy-tS-M69" secondAttribute="trailing" constant="16" id="aUc-sc-mjw"/>
+                            <constraint firstItem="d8T-mW-c5p" firstAttribute="leading" secondItem="BJt-7h-Hux" secondAttribute="leading" constant="30" id="hEh-Fv-DW7"/>
+                            <constraint firstItem="BJt-7h-Hux" firstAttribute="trailing" secondItem="d8T-mW-c5p" secondAttribute="trailing" constant="30" id="poD-dV-6HX"/>
+                            <constraint firstItem="BJt-7h-Hux" firstAttribute="trailing" secondItem="Wjg-x4-rxc" secondAttribute="trailing" constant="16" id="sXS-E5-pII"/>
+                            <constraint firstItem="tfy-tS-M69" firstAttribute="top" secondItem="BJt-7h-Hux" secondAttribute="top" id="tSy-Vz-uhI"/>
+                            <constraint firstItem="Wjg-x4-rxc" firstAttribute="top" secondItem="tfy-tS-M69" secondAttribute="bottom" constant="8" id="vpg-ry-2VS"/>
+                            <constraint firstItem="B5p-k0-2Jb" firstAttribute="centerY" secondItem="ZgH-W9-oRn" secondAttribute="centerY" id="w16-Hf-KPs"/>
+                            <constraint firstItem="d8T-mW-c5p" firstAttribute="top" secondItem="Wjg-x4-rxc" secondAttribute="bottom" constant="60" id="ymS-ap-fkq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BJt-7h-Hux"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="dv0-FC-tpo"/>
+                    <connections>
+                        <outlet property="bLabel" destination="kej-BE-hf4" id="IC0-px-02z"/>
+                        <outlet property="colorIndicatorView" destination="ZgH-W9-oRn" id="9IA-e6-imD"/>
+                        <outlet property="colorSquarePicker" destination="tfy-tS-M69" id="lcU-RP-sQe"/>
+                        <outlet property="gLabel" destination="dYJ-Gd-whO" id="wVM-c0-rQO"/>
+                        <outlet property="hLabel" destination="VMd-W1-LOo" id="GTW-Aw-BUR"/>
+                        <outlet property="hexLabel" destination="B5p-k0-2Jb" id="5AC-mT-5C5"/>
+                        <outlet property="rLabel" destination="Xhf-Tg-gPe" id="nG1-e3-GcY"/>
+                        <outlet property="sLabel" destination="f22-tE-KXq" id="E1r-SB-KPc"/>
+                        <outlet property="vLabel" destination="mnP-iJ-T82" id="ICr-mW-oW4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dit-Uf-PMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1261.5999999999999" y="-201.04947526236884"/>
         </scene>
         <!--Capture Color-->
         <scene sceneID="j6d-RB-A9L">
@@ -489,7 +616,7 @@
         <!--HueKit Example-->
         <scene sceneID="5od-7a-WFI">
             <objects>
-                <viewController id="UzB-E3-1Tt" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UzB-E3-1Tt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkk-xZ-YNW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -497,7 +624,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ceW-bz-0vT">
                                 <rect key="frame" x="27.5" y="28" width="320" height="518"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-M4-1Rh" customClass="ColorSquarePicker" customModule="HueKit">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-M4-1Rh" customClass="ColorSquarePicker">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -507,12 +634,15 @@
                                             <userDefinedRuntimeAttribute type="point" keyPath="value">
                                                 <point key="value" x="0.0" y="0.0"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="hue">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="colorSquarePickerValueChanged:" destination="UzB-E3-1Tt" eventType="valueChanged" id="yXQ-nv-sfJ"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-yF-Odc" customClass="ColorBarPicker" customModule="HueKit">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-yF-Odc" customClass="ColorBarPicker">
                                         <rect key="frame" x="0.0" y="320" width="320" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -647,7 +777,7 @@
                     <connections>
                         <outlet property="bLabel" destination="L2h-lw-DOa" id="3fY-Vc-XCn"/>
                         <outlet property="colorIndicatorView" destination="lsz-fz-emN" id="XqQ-PJ-38v"/>
-                        <outlet property="colorSquarePicker" destination="j1X-M4-1Rh" id="bCm-1K-J8b"/>
+                        <outlet property="colorSquarePicker" destination="j1X-M4-1Rh" id="lrx-Sz-LBK"/>
                         <outlet property="gLabel" destination="UaA-Jm-rpg" id="7EF-DN-Ebm"/>
                         <outlet property="hLabel" destination="dg8-0E-Whb" id="haw-2S-Dg3"/>
                         <outlet property="hexLabel" destination="JhF-jW-4vK" id="lXJ-pW-wpu"/>

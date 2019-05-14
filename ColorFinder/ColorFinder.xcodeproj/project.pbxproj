@@ -11,6 +11,7 @@
 		393D308E2283DAAD00D7DEB9 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */; };
 		393D30902283DAC100D7DEB9 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308F2283DAC100D7DEB9 /* ColorData.swift */; };
 		3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943BCD02283F916009F47B4 /* SwiftyJSON.swift */; };
+		394DFB40228A6EAD0012C384 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */; };
 		399E65E0228828160017C65F /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E65DF228828160017C65F /* ColorCell.swift */; };
 		39B04A6C2287DB6700CDCAB2 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */; };
 		39B04A6F2287DF2900CDCAB2 /* ColorCreator.c in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6E2287DF2900CDCAB2 /* ColorCreator.c */; };
@@ -44,6 +45,7 @@
 		393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		393D308F2283DAC100D7DEB9 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		3943BCD02283F916009F47B4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		399E65DF228828160017C65F /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColorHelper.cpp; sourceTree = "<group>"; };
 		39B04A6B2287DB6700CDCAB2 /* ColorHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColorHelper.hpp; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				BE5D7181222E95A200F200DE /* ColorCameraViewController.swift */,
 				39BFC01722897939000E6460 /* ViewController.swift */,
 				39B04A73228823A200CDCAB2 /* ColorListViewController.swift */,
+				394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				BE5D7184222E95C300F200DE /* CameraSessionManager.swift in Sources */,
 				39BFC0142289791F000E6460 /* UIColor+Values.swift in Sources */,
 				BE5D7188222E95DF00F200DE /* DBColorNames.m in Sources */,
+				394DFB40228A6EAD0012C384 /* ColorPickerViewController.swift in Sources */,
 				39BFC00A2289790D000E6460 /* ColorSquareView.swift in Sources */,
 				3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */,
 				39B04A6C2287DB6700CDCAB2 /* ColorHelper.cpp in Sources */,
