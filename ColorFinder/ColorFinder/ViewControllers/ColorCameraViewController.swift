@@ -219,9 +219,12 @@ class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSamp
     
     
     @IBAction func saveColor(_ sender: Any) {
+        guard let cname = self.colorNameLabel.text else {
+            return
+        }
         let color = Color(r: Int(self.last_rgb.red * 255),
                               g: Int(self.last_rgb.green * 255),
-                              b: Int(self.last_rgb.blue * 255))
+                              b: Int(self.last_rgb.blue * 255), _title: cname)
         if ColorData.shared.add(Color: color) {
             let alert = UIAlertController(title: "Color saved to color bank",
                                           message: "Continue to capture nature colors...",

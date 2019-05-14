@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390BEE29228AB0C700EF8F67 /* CombinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BEE28228AB0C700EF8F67 /* CombinationViewController.swift */; };
 		393D308C2283DA9900D7DEB9 /* ColorSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308B2283DA9900D7DEB9 /* ColorSaver.swift */; };
 		393D308E2283DAAD00D7DEB9 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */; };
 		393D30902283DAC100D7DEB9 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308F2283DAC100D7DEB9 /* ColorData.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390BEE28228AB0C700EF8F67 /* CombinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationViewController.swift; sourceTree = "<group>"; };
 		393D308B2283DA9900D7DEB9 /* ColorSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSaver.swift; sourceTree = "<group>"; };
 		393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		393D308F2283DAC100D7DEB9 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				BE5D7181222E95A200F200DE /* ColorCameraViewController.swift */,
 				39B04A73228823A200CDCAB2 /* ColorListViewController.swift */,
 				394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */,
+				390BEE28228AB0C700EF8F67 /* CombinationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390BEE29228AB0C700EF8F67 /* CombinationViewController.swift in Sources */,
 				39BFC0052289790D000E6460 /* SourceColorView.swift in Sources */,
 				39BFC0062289790D000E6460 /* ColorBarPicker.swift in Sources */,
 				39B04A76228823EC00CDCAB2 /* BorderButton.swift in Sources */,

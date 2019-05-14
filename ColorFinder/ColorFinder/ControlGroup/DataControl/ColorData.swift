@@ -9,7 +9,7 @@
 import UIKit
 
 class Color{
-    
+    let colorTitle:String
     let color_id:String
     let red:Int
     let green:Int
@@ -25,15 +25,17 @@ class Color{
         self.blue = jsonData["blue"]?.intValue ?? 255
         self.alpha = jsonData["alpha"]?.intValue ?? 255
         self.intRGB = UInt32(jsonData["rgb"]?.intValue ?? 0xFFFFFF)
+        self.colorTitle = jsonData["title"]?.stringValue ?? "No Title"
     }
     
-    init(r:Int,g:Int, b:Int, a:Int = 255) {
+    init(r:Int,g:Int, b:Int, a:Int = 255, _title:String = "No Title") {
         self.red = r
         self.green = g
         self.blue = b
         self.alpha = a
         self.intRGB =  UInt32(65536 * r + 256 * g + b)
         self.color_id = Color.getColorID()
+        self.colorTitle = _title
     }
     
     static func getColorID()->String {
@@ -45,7 +47,7 @@ class Color{
         return id
     }
     
-    init(hex:Int, a:Int = 255){
+    init(hex:Int, a:Int = 255, _title:String = "No Title"){
         let rgbValue = hex
         self.red = (rgbValue & 0xFF0000) >> 16
         self.green = (rgbValue & 0x00FF00) >> 8
@@ -53,6 +55,7 @@ class Color{
         self.intRGB =  UInt32(rgbValue)
         self.alpha = a
         self.color_id = Color.getColorID()
+        self.colorTitle = _title
     }
     
     func toColor()->UIColor{

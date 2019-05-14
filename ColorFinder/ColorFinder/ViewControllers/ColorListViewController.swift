@@ -11,6 +11,7 @@ import UIKit
 class ColorListViewController: UIViewController {
     let saver = ColorSaver.shared
     let dataLoader = ColorData.shared
+    let colorNameObject = DBColorNames()
     @IBOutlet weak var colorCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,11 @@ class ColorListViewController: UIViewController {
             let r = Int(arc4random() % 255)
             let g = Int(arc4random() % 255)
             let b = Int(arc4random() % 255)
-            let color = Color(r: r, g: g, b: b)
+            guard let name = self.colorNameObject.name(for: CGFloat(r)/255.0,
+                                                       green: CGFloat(g)/255.0,
+                                                       blue: CGFloat(b)/255.0) else { return }
+            let color = Color(r: r, g: g, b: b, _title:name)
+            
             self.dataLoader.colorDataArray.append(color)
         }
         self.colorCollectionView.reloadData()
@@ -52,15 +57,20 @@ class ColorListViewController: UIViewController {
         self.colorCollectionView.reloadData()
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let idf = segue.identifier {
+            if idf.elementsEqual("ColorSegue") {
+                if let dest = segue.destination as? CombinationViewController {
+                    dest.colorData = sender as? Color
+                }
+            }            
+        }
     }
-    */
 
 }
 
@@ -77,5 +87,8 @@ extension ColorListViewController:UICollectionViewDelegate, UICollectionViewData
         cell.color = data
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let color = self.dataLoader.colorDataArray[indexPath.row]
+        self.performSegue(withIdentifier: "ColorSegue", sender: color)
+    }
 }

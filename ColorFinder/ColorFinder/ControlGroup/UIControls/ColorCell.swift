@@ -19,6 +19,7 @@ class ColorCell: UICollectionViewCell {
                 self.red.text = "\(c.red)"
                 self.green.text = "\(c.green)"
                 self.blue.text = "\(c.blue)"
+                self.colorTittle.text = c.colorTitle
                 self.layer.shadowColor = _c.cgColor
                 let hexvalue:String = String(NSString(format:"%2X", c.intRGB))
                 self.colorValue.text = hexvalue
@@ -50,7 +51,7 @@ class ColorCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var bottomColorView: UIView!
-    
+    @IBOutlet weak var colorTittle: UILabel!
     @IBOutlet weak var greenview: UIView!
     @IBOutlet weak var redview: UIView!
     @IBOutlet weak var colorParentView: UIView!
