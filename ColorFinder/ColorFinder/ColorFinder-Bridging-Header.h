@@ -5,3 +5,6 @@
 #import "DBColorNames.h"
 #include "ColorHelper.hpp"
 #include "ColorCreator.h"
+#import "CMFilterViewController.h"
+#import "BCBaseFilterData.h"
+#import "BCFilterGLView.h"

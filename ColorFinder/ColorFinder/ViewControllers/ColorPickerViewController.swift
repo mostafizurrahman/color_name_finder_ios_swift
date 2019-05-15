@@ -10,7 +10,10 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
 
-    
+    @IBOutlet weak var squareHeightLayout: NSLayoutConstraint!
+    @IBOutlet weak var squareWidthLyout: NSLayoutConstraint!
+    typealias IH = InterfaceHelper
+    @IBOutlet weak var colorBarWidthLayout: NSLayoutConstraint!
     var last_rgb:UIColor?
     @IBOutlet weak var colorSaveButton: UIButton!
     
@@ -40,9 +43,16 @@ class ColorPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if InterfaceHelper.IS_PAD {
+        self.squareHeightLayout.constant = IH.MS_HEIGHT * 0.35
+        if IH.IS_PAD {
+            self.colorBarWidthLayout.constant = IH.MS_WIDTH * 0.45
+            self.squareWidthLyout.constant = IH.MS_WIDTH * 0.45
             self._rgb.constant = InterfaceHelper.MS_WIDTH * 0.35
-        } else {
+            
+        } else  {
+            self.colorBarWidthLayout.constant = IH.MS_WIDTH * 0.9
+            self.squareWidthLyout.constant = IH.MS_WIDTH * 0.9
+            
             self._rgb.constant = InterfaceHelper.MS_WIDTH * 0.75
         }
         if let colorPicker = self.colorSquarePicker {

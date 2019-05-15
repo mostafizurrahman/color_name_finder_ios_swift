@@ -60,7 +60,8 @@ class CameraSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
             }
         }
         do {
-            let deviceInput = try AVCaptureDeviceInput(device: videoDevice)
+            guard let device = self.videoDevice else {return}
+            let deviceInput = try AVCaptureDeviceInput(device: device)
             captureSession.addInput(deviceInput)
         } catch {
             
@@ -71,8 +72,10 @@ class CameraSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
         imageDataOutput = AVCaptureStillImageOutput()
         imageDataOutput.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
         captureSession.addOutput(imageDataOutput)
-        imageConnection = imageDataOutput.connection(with: AVMediaType.video)
-        imageConnection.videoOrientation = AVCaptureVideoOrientation.portrait
+        if let connection = imageDataOutput.connection(with: AVMediaType.video) {
+            imageConnection = connection
+            imageConnection.videoOrientation = AVCaptureVideoOrientation.portrait
+        }
     }
     
     func configurePreviewLayer(){

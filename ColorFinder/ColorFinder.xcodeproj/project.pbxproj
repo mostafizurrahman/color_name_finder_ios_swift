@@ -13,11 +13,21 @@
 		393D30902283DAC100D7DEB9 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393D308F2283DAC100D7DEB9 /* ColorData.swift */; };
 		3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3943BCD02283F916009F47B4 /* SwiftyJSON.swift */; };
 		394DFB40228A6EAD0012C384 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */; };
+		39623457228BF9C200E8256D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39623456228BF9C200E8256D /* FilterViewController.swift */; };
+		39623459228C12B800E8256D /* ImageShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39623458228C12B700E8256D /* ImageShareViewController.swift */; };
+		3962345B228C12D200E8256D /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962345A228C12D200E8256D /* ShareView.swift */; };
 		399E65E0228828160017C65F /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E65DF228828160017C65F /* ColorCell.swift */; };
 		39B04A6C2287DB6700CDCAB2 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */; };
 		39B04A6F2287DF2900CDCAB2 /* ColorCreator.c in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6E2287DF2900CDCAB2 /* ColorCreator.c */; };
 		39B04A74228823A200CDCAB2 /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A73228823A200CDCAB2 /* ColorListViewController.swift */; };
 		39B04A76228823EC00CDCAB2 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A75228823EC00CDCAB2 /* BorderButton.swift */; };
+		39B5C654228BF048009184A3 /* BCBaseFilterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C64E228BF047009184A3 /* BCBaseFilterData.m */; };
+		39B5C655228BF048009184A3 /* BCFilterGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C64F228BF047009184A3 /* BCFilterGLView.m */; };
+		39B5C656228BF048009184A3 /* CMFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C650228BF048009184A3 /* CMFilterViewController.m */; };
+		39B5C65B228BF299009184A3 /* AlbumListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C657228BF299009184A3 /* AlbumListController.swift */; };
+		39B5C65C228BF299009184A3 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C658228BF299009184A3 /* AlbumManager.swift */; };
+		39B5C65D228BF299009184A3 /* AlbumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C659228BF299009184A3 /* AlbumTableCell.swift */; };
+		39B5C65E228BF299009184A3 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C65A228BF299009184A3 /* AlbumViewController.swift */; };
 		39BFC0052289790D000E6460 /* SourceColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFBFFF2289790C000E6460 /* SourceColorView.swift */; };
 		39BFC0062289790D000E6460 /* ColorBarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0002289790C000E6460 /* ColorBarPicker.swift */; };
 		39BFC0072289790D000E6460 /* ColorIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0012289790D000E6460 /* ColorIndicatorView.swift */; };
@@ -47,6 +57,9 @@
 		393D308F2283DAC100D7DEB9 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		3943BCD02283F916009F47B4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		39623456228BF9C200E8256D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		39623458228C12B700E8256D /* ImageShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageShareViewController.swift; sourceTree = "<group>"; };
+		3962345A228C12D200E8256D /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		399E65DF228828160017C65F /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColorHelper.cpp; sourceTree = "<group>"; };
 		39B04A6B2287DB6700CDCAB2 /* ColorHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColorHelper.hpp; sourceTree = "<group>"; };
@@ -54,6 +67,16 @@
 		39B04A6E2287DF2900CDCAB2 /* ColorCreator.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ColorCreator.c; sourceTree = "<group>"; };
 		39B04A73228823A200CDCAB2 /* ColorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		39B04A75228823EC00CDCAB2 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		39B5C64E228BF047009184A3 /* BCBaseFilterData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBaseFilterData.m; sourceTree = "<group>"; };
+		39B5C64F228BF047009184A3 /* BCFilterGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFilterGLView.m; sourceTree = "<group>"; };
+		39B5C650228BF048009184A3 /* CMFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFilterViewController.m; sourceTree = "<group>"; };
+		39B5C651228BF048009184A3 /* CMFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFilterViewController.h; sourceTree = "<group>"; };
+		39B5C652228BF048009184A3 /* BCBaseFilterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBaseFilterData.h; sourceTree = "<group>"; };
+		39B5C653228BF048009184A3 /* BCFilterGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFilterGLView.h; sourceTree = "<group>"; };
+		39B5C657228BF299009184A3 /* AlbumListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListController.swift; sourceTree = "<group>"; };
+		39B5C658228BF299009184A3 /* AlbumManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
+		39B5C659228BF299009184A3 /* AlbumTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableCell.swift; sourceTree = "<group>"; };
+		39B5C65A228BF299009184A3 /* AlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		39BFBFFF2289790C000E6460 /* SourceColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceColorView.swift; sourceTree = "<group>"; };
 		39BFC0002289790C000E6460 /* ColorBarPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarPicker.swift; sourceTree = "<group>"; };
 		39BFC0012289790D000E6460 /* ColorIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorIndicatorView.swift; sourceTree = "<group>"; };
@@ -112,6 +135,12 @@
 				BE5D7189222EA4E400F200DE /* InterfaceHelper.swift */,
 				BE5D7186222E95DF00F200DE /* DBColorNames.h */,
 				BE5D7187222E95DF00F200DE /* DBColorNames.m */,
+				39B5C652228BF048009184A3 /* BCBaseFilterData.h */,
+				39B5C64E228BF047009184A3 /* BCBaseFilterData.m */,
+				39B5C653228BF048009184A3 /* BCFilterGLView.h */,
+				39B5C64F228BF047009184A3 /* BCFilterGLView.m */,
+				39B5C651228BF048009184A3 /* CMFilterViewController.h */,
+				39B5C650228BF048009184A3 /* CMFilterViewController.m */,
 				393D308B2283DA9900D7DEB9 /* ColorSaver.swift */,
 				393D308D2283DAAD00D7DEB9 /* ColorGenerator.swift */,
 				393D308F2283DAC100D7DEB9 /* ColorData.swift */,
@@ -133,8 +162,13 @@
 		39B04A7222880C8100CDCAB2 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				3962345A228C12D200E8256D /* ShareView.swift */,
 				39B04A75228823EC00CDCAB2 /* BorderButton.swift */,
 				399E65DF228828160017C65F /* ColorCell.swift */,
+				39B5C657228BF299009184A3 /* AlbumListController.swift */,
+				39B5C658228BF299009184A3 /* AlbumManager.swift */,
+				39B5C659228BF299009184A3 /* AlbumTableCell.swift */,
+				39B5C65A228BF299009184A3 /* AlbumViewController.swift */,
 			);
 			path = UIControls;
 			sourceTree = "<group>";
@@ -186,6 +220,8 @@
 				39B04A73228823A200CDCAB2 /* ColorListViewController.swift */,
 				394DFB3F228A6EAD0012C384 /* ColorPickerViewController.swift */,
 				390BEE28228AB0C700EF8F67 /* CombinationViewController.swift */,
+				39623456228BF9C200E8256D /* FilterViewController.swift */,
+				39623458228C12B700E8256D /* ImageShareViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,14 +303,19 @@
 				39BFC0062289790D000E6460 /* ColorBarPicker.swift in Sources */,
 				39B04A76228823EC00CDCAB2 /* BorderButton.swift in Sources */,
 				39BFC0152289791F000E6460 /* HSBGen.swift in Sources */,
+				39B5C65B228BF299009184A3 /* AlbumListController.swift in Sources */,
+				39B5C65E228BF299009184A3 /* AlbumViewController.swift in Sources */,
 				BE5D7182222E95A200F200DE /* ColorCameraViewController.swift in Sources */,
 				39BFC0082289790D000E6460 /* ColorBarView.swift in Sources */,
+				39B5C65D228BF299009184A3 /* AlbumTableCell.swift in Sources */,
 				39BFC01022897919000E6460 /* RGB.swift in Sources */,
 				BE5D7184222E95C300F200DE /* CameraSessionManager.swift in Sources */,
 				39BFC0142289791F000E6460 /* UIColor+Values.swift in Sources */,
+				39B5C65C228BF299009184A3 /* AlbumManager.swift in Sources */,
 				BE5D7188222E95DF00F200DE /* DBColorNames.m in Sources */,
 				394DFB40228A6EAD0012C384 /* ColorPickerViewController.swift in Sources */,
 				39BFC00A2289790D000E6460 /* ColorSquareView.swift in Sources */,
+				39B5C654228BF048009184A3 /* BCBaseFilterData.m in Sources */,
 				3943BCD12283F916009F47B4 /* SwiftyJSON.swift in Sources */,
 				39B04A6C2287DB6700CDCAB2 /* ColorHelper.cpp in Sources */,
 				39B04A6F2287DF2900CDCAB2 /* ColorCreator.c in Sources */,
@@ -285,10 +326,15 @@
 				39BFC0092289790D000E6460 /* ColorSquarePicker.swift in Sources */,
 				399E65E0228828160017C65F /* ColorCell.swift in Sources */,
 				393D308E2283DAAD00D7DEB9 /* ColorGenerator.swift in Sources */,
+				39B5C655228BF048009184A3 /* BCFilterGLView.m in Sources */,
 				393D308C2283DA9900D7DEB9 /* ColorSaver.swift in Sources */,
+				39623457228BF9C200E8256D /* FilterViewController.swift in Sources */,
 				39BFC00E22897919000E6460 /* HSBComponent.swift in Sources */,
+				39B5C656228BF048009184A3 /* CMFilterViewController.m in Sources */,
+				39623459228C12B800E8256D /* ImageShareViewController.swift in Sources */,
 				39BFC00F22897919000E6460 /* HSV.swift in Sources */,
 				39B04A74228823A200CDCAB2 /* ColorListViewController.swift in Sources */,
+				3962345B228C12D200E8256D /* ShareView.swift in Sources */,
 				BE5D718A222EA4E400F200DE /* InterfaceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

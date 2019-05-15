@@ -73,6 +73,16 @@ class CombinationViewController: UIViewController {
         }
         self.selectedPicker = sender.view as? ColorIndicatorView
         sender.view?.layer.borderWidth = 5
+        if let _sp = self.selectedPicker {
+            self.titlelabel.textColor = _sp.color
+            let text = self.titlelabel.text
+            self.titlelabel.text = "Color Copied!"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.titlelabel.text = text
+                self.titlelabel.textColor = UIColor.black
+            }
+            UIPasteboard.general.string = _sp.color.hexString.replacingOccurrences(of: "#", with: "")
+        }
     }
     
     @IBAction func changeColorType(_ sender: UISegmentedControl) {
