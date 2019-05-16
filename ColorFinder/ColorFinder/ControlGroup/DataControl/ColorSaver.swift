@@ -20,6 +20,20 @@ class ColorSaver {
     var jsonData:JSON?
     let colorData = ColorData.shared
     init() {
+        let colorNameObject = DBColorNames()
+        for _ in 1...5 {
+            let r = Int(arc4random() % 255)
+            let g = Int(arc4random() % 255)
+            let b = Int(arc4random() % 255)
+            
+            guard let name = colorNameObject.name(for: CGFloat(r)/255.0,
+                                                  green: CGFloat(g)/255.0,
+                                                  blue: CGFloat(b)/255.0) else { return }
+            let color = Color(r: r, g: g, b: b, _title:name)
+            
+            self.colorData.colorDataArray.append(color)
+        }
+        
         self.isReadData = self.setJSON()
     }
     
@@ -42,6 +56,7 @@ class ColorSaver {
     fileprivate func read(ColorsPath jpath:String)->Bool{
         
         do {
+            
             let fileUrl = URL(fileURLWithPath: jpath)
             let data = try Data(contentsOf: fileUrl)
             self.jsonData = JSON(data: data)
@@ -66,14 +81,14 @@ class ColorSaver {
         let jurl = URL(fileURLWithPath: jpath)
         let colorJson = color.toJson()
         do {
-            if self.colorData.colorDataArray.count == 0 {
+            if self.colorData.colorDataArray.count == 5 {
                 try "{\"color_data\" : [\(colorJson)]}".write(to: jurl, atomically: true, encoding: .utf8)
                 print("saved first color")
             } else {
                 let jsonStr = try String(contentsOf: jurl).dropLast(2).appending(",")
                 let savedJson = jsonStr.appending(colorJson).appending("]}")
                 try savedJson.write(to: jurl, atomically: true, encoding: .utf8)
-                print("next color saved")
+                print(jsonStr)
             }
             return true
         } catch {

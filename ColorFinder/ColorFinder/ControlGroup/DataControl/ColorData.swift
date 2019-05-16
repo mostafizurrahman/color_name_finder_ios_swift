@@ -66,7 +66,7 @@ class Color{
     }
     
     func toJson() -> String{
-        return "{\"id\" : \"\(self.color_id)\", \"red\" : \(self.red), \"green\" : \(self.green), \"blue\" : \(self.blue), \"alpha\" : \(self.alpha), \"rgb\" : \(self.intRGB)}"
+        return "{\"id\" : \"\(self.color_id)\", \"red\" : \(self.red), \"green\" : \(self.green), \"blue\" : \(self.blue), \"alpha\" : \(self.alpha), \"rgb\" : \(self.intRGB), \"title\" : \"\(self.colorTitle)\"}"
     }
 }
 

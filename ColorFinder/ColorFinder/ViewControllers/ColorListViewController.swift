@@ -43,18 +43,8 @@ class ColorListViewController: UIViewController {
         // Do any additional setup after loading the view.
         let notname = Notification.Name.init("color_saved")
         NotificationCenter.default.addObserver(self, selector: #selector(reloadColor(_ :)), name: notname, object: nil)
-        for _ in 1...5 {
-            let r = Int(arc4random() % 255)
-            let g = Int(arc4random() % 255)
-            let b = Int(arc4random() % 255)
-            guard let name = self.colorNameObject.name(for: CGFloat(r)/255.0,
-                                                       green: CGFloat(g)/255.0,
-                                                       blue: CGFloat(b)/255.0) else { return }
-            let color = Color(r: r, g: g, b: b, _title:name)
-            
-            self.dataLoader.colorDataArray.append(color)
-        }
-        self.colorCollectionView.reloadData()
+        
+//        self.colorCollectionView.reloadData()
     }
     @objc func reloadColor(_ not:Notification){
         self.colorCollectionView.reloadData()

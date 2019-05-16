@@ -97,8 +97,9 @@ class ColorPickerViewController: UIViewController {
             let notification = Notification.init(name: Notification.Name.init("color_saved"))
             NotificationCenter.default.post(notification)
         }
-        
     }
+    
+    
     func didChangeColor(_ color: UIColor) {
         
         guard let rgbValue = color.rgbValue else {
