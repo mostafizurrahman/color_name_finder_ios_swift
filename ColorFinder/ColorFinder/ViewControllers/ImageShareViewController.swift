@@ -120,6 +120,11 @@ class ImageShareViewController: UIViewController {
     @IBAction func exitSharing(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    @IBAction func hideActivity(_ sender: Any) {
+        InterfaceHelper.animateOpacity(toInvisible: self.activityView,
+                                       atDuration: 0.4) { (finished) in
+        }
+    }
     @IBAction func shareOnFacebook(_ sender: UIButton) {
         guard let __image = self.sourceImage else {
             return
@@ -129,7 +134,7 @@ class ImageShareViewController: UIViewController {
     
     var placeholder:PHObjectPlaceholder?
     var albumAsset:PHAssetCollection?
-    func create(Album name:String = "SocialVideo")  {
+    func create(Album name:String = "_ColorFinder_")  {
         //Get PHFetch Options
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", name)
@@ -168,11 +173,18 @@ class ImageShareViewController: UIViewController {
                 let albumChangeRequest = PHAssetCollectionChangeRequest(
                     for: __album, assets: photosAsset)
                 albumChangeRequest!.addAssets([assetPlaceholder!] as NSFastEnumeration)
+               
                 
-                  
             }, completionHandler: { success, error in
                 print("added image to album")
+                let fetchOptions = PHFetchOptions()
+                let desc = NSSortDescriptor.init(key: "creationDate", ascending: true)
+                fetchOptions.sortDescriptors = [desc]
                 
+                let fetchResult = PHAsset.fetchAssets(in: __album, options: fetchOptions)
+                guard let _asset = fetchResult.lastObject else {return}
+                self.photoAsset = _asset
+                self.openInstagramShare()
             })
         }
     }
@@ -183,8 +195,10 @@ class ImageShareViewController: UIViewController {
         }
         let url_location = "instagram://library?LocalIdentifier=\(__asset.localIdentifier)"
         guard let url = URL(string: url_location) else {return}
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.openURL(url)
+        DispatchQueue.main.async {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
         }
     }
     
