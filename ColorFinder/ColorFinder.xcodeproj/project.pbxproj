@@ -40,6 +40,7 @@
 		39BFC0142289791F000E6460 /* UIColor+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0112289791E000E6460 /* UIColor+Values.swift */; };
 		39BFC0152289791F000E6460 /* HSBGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0122289791E000E6460 /* HSBGen.swift */; };
 		39BFC0162289791F000E6460 /* CGFloat+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0132289791F000E6460 /* CGFloat+Pin.swift */; };
+		39C6D82A229BC6C900A58336 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C6D829229BC6C800A58336 /* SubscriptionViewController.swift */; };
 		BE5D716D222E94A000F200DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D716C222E94A000F200DE /* AppDelegate.swift */; };
 		BE5D7172222E94A000F200DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5D7170222E94A000F200DE /* Main.storyboard */; };
 		BE5D7174222E94A300F200DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5D7173222E94A300F200DE /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		BE5D7184222E95C300F200DE /* CameraSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D7183222E95C300F200DE /* CameraSessionManager.swift */; };
 		BE5D7188222E95DF00F200DE /* DBColorNames.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5D7187222E95DF00F200DE /* DBColorNames.m */; };
 		BE5D718A222EA4E400F200DE /* InterfaceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D7189222EA4E400F200DE /* InterfaceHelper.swift */; };
+		C2E2C36E6C9A729E2B06B7A6 /* Pods_ColorFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD2CCCD9E60E69B318576C /* Pods_ColorFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,9 @@
 		39BFC0112289791E000E6460 /* UIColor+Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Values.swift"; sourceTree = "<group>"; };
 		39BFC0122289791E000E6460 /* HSBGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBGen.swift; sourceTree = "<group>"; };
 		39BFC0132289791F000E6460 /* CGFloat+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Pin.swift"; sourceTree = "<group>"; };
+		39C6D829229BC6C800A58336 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		7B5C6F1E4B6DE4C105353008 /* Pods-ColorFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorFinder.debug.xcconfig"; path = "Target Support Files/Pods-ColorFinder/Pods-ColorFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		96B1DE19EECA327D407D394A /* Pods-ColorFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorFinder.release.xcconfig"; path = "Target Support Files/Pods-ColorFinder/Pods-ColorFinder.release.xcconfig"; sourceTree = "<group>"; };
 		BE5D7169222E94A000F200DE /* ColorFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5D716C222E94A000F200DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5D7171222E94A000F200DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		BE5D7186222E95DF00F200DE /* DBColorNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBColorNames.h; sourceTree = "<group>"; };
 		BE5D7187222E95DF00F200DE /* DBColorNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBColorNames.m; sourceTree = "<group>"; };
 		BE5D7189222EA4E400F200DE /* InterfaceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceHelper.swift; sourceTree = "<group>"; };
+		C3CD2CCCD9E60E69B318576C /* Pods_ColorFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E2C36E6C9A729E2B06B7A6 /* Pods_ColorFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,11 +180,23 @@
 			path = UIControls;
 			sourceTree = "<group>";
 		};
+		B239DB9A2754DA90866623BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B5C6F1E4B6DE4C105353008 /* Pods-ColorFinder.debug.xcconfig */,
+				96B1DE19EECA327D407D394A /* Pods-ColorFinder.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BE5D7160222E94A000F200DE = {
 			isa = PBXGroup;
 			children = (
 				BE5D716B222E94A000F200DE /* ColorFinder */,
 				BE5D716A222E94A000F200DE /* Products */,
+				B239DB9A2754DA90866623BB /* Pods */,
+				FF19275DECF92E2F8891020D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,8 +241,17 @@
 				390BEE28228AB0C700EF8F67 /* CombinationViewController.swift */,
 				39623456228BF9C200E8256D /* FilterViewController.swift */,
 				39623458228C12B700E8256D /* ImageShareViewController.swift */,
+				39C6D829229BC6C800A58336 /* SubscriptionViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF19275DECF92E2F8891020D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3CD2CCCD9E60E69B318576C /* Pods_ColorFinder.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE5D717B222E94A300F200DE /* Build configuration list for PBXNativeTarget "ColorFinder" */;
 			buildPhases = (
+				A0F471589E86E4F8D0253F51 /* [CP] Check Pods Manifest.lock */,
 				BE5D7165222E94A000F200DE /* Sources */,
 				BE5D7166222E94A000F200DE /* Frameworks */,
 				BE5D7167222E94A000F200DE /* Resources */,
+				6ABC931E526A0467063DC5C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +323,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6ABC931E526A0467063DC5C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorFinder/Pods-ColorFinder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorFinder/Pods-ColorFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0F471589E86E4F8D0253F51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ColorFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE5D7165222E94A000F200DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -334,6 +411,7 @@
 				39623459228C12B800E8256D /* ImageShareViewController.swift in Sources */,
 				39BFC00F22897919000E6460 /* HSV.swift in Sources */,
 				39B04A74228823A200CDCAB2 /* ColorListViewController.swift in Sources */,
+				39C6D82A229BC6C900A58336 /* SubscriptionViewController.swift in Sources */,
 				3962345B228C12D200E8256D /* ShareView.swift in Sources */,
 				BE5D718A222EA4E400F200DE /* InterfaceHelper.swift in Sources */,
 			);
@@ -479,6 +557,7 @@
 		};
 		BE5D717C222E94A300F200DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B5C6F1E4B6DE4C105353008 /* Pods-ColorFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -505,6 +584,7 @@
 		};
 		BE5D717D222E94A300F200DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B1DE19EECA327D407D394A /* Pods-ColorFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
