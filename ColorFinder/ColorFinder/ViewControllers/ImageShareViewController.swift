@@ -209,7 +209,7 @@ class ImageShareViewController: UIViewController {
         let (appName, serviceType) = app.elementsEqual("fb") ? ("Facebook",SLServiceTypeFacebook) : ("Twitter",SLServiceTypeTwitter)
         if UIApplication.shared.canOpenURL(appUrl){
             guard let socialViewController = SLComposeViewController(forServiceType: serviceType) else {return}
-            socialViewController.setInitialText("#socialvideo#dirtyadult")
+            socialViewController.setInitialText("#colorfinder #colorimage")
             socialViewController.add(image)
             socialViewController.completionHandler = { (result:SLComposeViewControllerResult) -> Void in
                 switch result {
