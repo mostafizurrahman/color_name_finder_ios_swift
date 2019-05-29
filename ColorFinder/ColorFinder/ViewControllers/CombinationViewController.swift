@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CombinationViewController: UIViewController {
+class CombinationViewController: BaseViewController {
     
     var colorData:Color?
     

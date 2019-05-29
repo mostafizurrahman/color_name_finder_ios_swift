@@ -16,20 +16,21 @@ class SubscriptionViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var webView: UIWebView!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var buttonBackground: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
-
+    
     @IBOutlet weak var gradientView: UIView!
     
     @IBOutlet weak var subscribeButton: BorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         SwiftyStoreKit.retrieveProductsInfo([AppDelegate.SIDF]) { result in
-
+            
             if let product = result.retrievedProducts.first {
                 let priceString = product.localizedPrice!
                 DispatchQueue.main.async {
@@ -54,34 +55,19 @@ class SubscriptionViewController: UIViewController {
         self.iconImageView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
         
-        do {
-            guard let filePath = Bundle.main.path(forResource: "terms", ofType: "html")
-                else {
-                    // File Error
-                    print ("File reading error")
-                    return
-            }
-            
-            let contents =  try String(contentsOfFile: filePath, encoding: .utf8)
-            let baseUrl = URL(fileURLWithPath: filePath)
-            webView.loadHTMLString(contents as String, baseURL: baseUrl)
-        }
-        catch {
-            print ("File HTML error")
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        var alpha:CGFloat  = 1.0
+        //        var alpha:CGFloat  = 1.0
         for _ in 0...1{
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = UIDevice.current.userInterfaceIdiom == .pad  ?
                 CGRect(origin: .zero, size: CGSize(width: 2000, height: 2000)) : gradientView.layer.bounds
             gradientLayer.colors = [UIColor(white: 1.0, alpha: 0.0).cgColor,
                                     UIColor(white: 1.0, alpha: 1).cgColor]
-//            alpha -= 0.15
+            //            alpha -= 0.15
             self.gradientView.backgroundColor = UIColor.clear
             gradientView.layer.addSublayer(gradientLayer)
         }
@@ -98,38 +84,45 @@ class SubscriptionViewController: UIViewController {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     @IBAction func exitSubscriptions(_ sender: Any) {
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
         } else {
             UserDefaults.standard.set(true, forKey: "skip_dismiss")
             self.dismiss(animated: true) {
-            
+                
             }
         }
     }
     
-    @IBOutlet weak var crossButton: UIButton!
-    @IBAction func closeTerms(_ sender: Any) {
-        InterfaceHelper.animateOpacity(toInvisible: self.webView, atDuration: 0.4) { (finish) in
-            self.crossButton.isHidden = true
+    @IBAction func details(_ sender: Any) {
+        if let privacy = Bundle.main.path(forResource: "details", ofType: "html") {
+            self.performSegue(withIdentifier: "TermsSegue", sender: [privacy, "Subscription"])
+        }
+    }
+    
+    @IBAction func openPrivacy(_ sender: Any) {
+        if let privacy = Bundle.main.path(forResource: "privacy", ofType: "html") {
+            self.performSegue(withIdentifier: "TermsSegue", sender: [privacy, "Privacy"])
         }
     }
     @IBAction func openTersm(_ sender: Any) {
-        InterfaceHelper.animateOpacity(toVisible: self.webView, atDuration: 0.4) { (finish) in
-            self.crossButton.isHidden = false
-            self.view.bringSubviewToFront(self.crossButton)
+        
+        if let privacy = Bundle.main.path(forResource: "terms", ofType: "html") {
+            self.performSegue(withIdentifier: "TermsSegue", sender: [privacy, "Terms"])
         }
     }
+    
+    
     
     @IBAction func restorePurchase(_ sender: Any) {
         SwiftyStoreKit.restorePurchases(atomically: true) { results in
@@ -198,9 +191,9 @@ class SubscriptionViewController: UIViewController {
     }
     
     func varifySubscription(Product productId: String){
-       
+        
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: AppDelegate.SS)
-
+        
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
             switch result {
             case .success(let receipt):
@@ -252,7 +245,7 @@ class SubscriptionViewController: UIViewController {
                     SwiftyStoreKit.finishTransaction(purchase.transaction)
                 }
                 let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: AppDelegate.SS)
-
+                
                 SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
                     
                     if case .success(let receipt) = result {
@@ -296,11 +289,11 @@ class SubscriptionViewController: UIViewController {
                     pop.sourceRect = CGRect(origin: CGPoint(x: self.view.frame.midX, y: self.view.frame.midY), size: .zero)
                 }
                 let action = UIAlertAction(title: "Done", style: .default, handler: { (_) in
-                   
+                    
                 })
-                    avc.addAction(action)
-                    
-                    
+                avc.addAction(action)
+                
+                
                 DispatchQueue.main.async {
                     self.present(avc, animated: true, completion: {
                         
@@ -309,6 +302,16 @@ class SubscriptionViewController: UIViewController {
                 }
                 // purchase error
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let idf = segue.identifier, let dest = segue.destination as? TermsViewController else {
+            return
+        }
+        if idf.elementsEqual("TermsSegue"), let obj = sender as? [String] {
+            dest.termsTitle = obj[1]
+            dest.termsFPath = obj[0]
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorListViewController: UIViewController {
+class ColorListViewController: BaseViewController {
     
     let saver = ColorSaver.shared
     let dataLoader = ColorData.shared

@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-class ColorCameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDelegate{
+class ColorCameraViewController: BaseViewController , AVCaptureVideoDataOutputSampleBufferDelegate{
     
     typealias IH = InterfaceHelper
     struct DominentColor {

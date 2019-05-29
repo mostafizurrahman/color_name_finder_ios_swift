@@ -16,6 +16,7 @@
 		39623457228BF9C200E8256D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39623456228BF9C200E8256D /* FilterViewController.swift */; };
 		39623459228C12B800E8256D /* ImageShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39623458228C12B700E8256D /* ImageShareViewController.swift */; };
 		3962345B228C12D200E8256D /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962345A228C12D200E8256D /* ShareView.swift */; };
+		3972951E229E513D0057845E /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3972951D229E513D0057845E /* TermsViewController.swift */; };
 		399E65E0228828160017C65F /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399E65DF228828160017C65F /* ColorCell.swift */; };
 		39B04A6C2287DB6700CDCAB2 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */; };
 		39B04A6F2287DF2900CDCAB2 /* ColorCreator.c in Sources */ = {isa = PBXBuildFile; fileRef = 39B04A6E2287DF2900CDCAB2 /* ColorCreator.c */; };
@@ -28,6 +29,7 @@
 		39B5C65C228BF299009184A3 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C658228BF299009184A3 /* AlbumManager.swift */; };
 		39B5C65D228BF299009184A3 /* AlbumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C659228BF299009184A3 /* AlbumTableCell.swift */; };
 		39B5C65E228BF299009184A3 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5C65A228BF299009184A3 /* AlbumViewController.swift */; };
+		39BD93D4229E7BE900F57F70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD93D3229E7BE900F57F70 /* BaseViewController.swift */; };
 		39BFC0052289790D000E6460 /* SourceColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFBFFF2289790C000E6460 /* SourceColorView.swift */; };
 		39BFC0062289790D000E6460 /* ColorBarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0002289790C000E6460 /* ColorBarPicker.swift */; };
 		39BFC0072289790D000E6460 /* ColorIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFC0012289790D000E6460 /* ColorIndicatorView.swift */; };
@@ -62,6 +64,7 @@
 		39623456228BF9C200E8256D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		39623458228C12B700E8256D /* ImageShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageShareViewController.swift; sourceTree = "<group>"; };
 		3962345A228C12D200E8256D /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		3972951D229E513D0057845E /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		399E65DF228828160017C65F /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		39B04A6A2287DB6700CDCAB2 /* ColorHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColorHelper.cpp; sourceTree = "<group>"; };
 		39B04A6B2287DB6700CDCAB2 /* ColorHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColorHelper.hpp; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		39B5C658228BF299009184A3 /* AlbumManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		39B5C659228BF299009184A3 /* AlbumTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableCell.swift; sourceTree = "<group>"; };
 		39B5C65A228BF299009184A3 /* AlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		39BD93D3229E7BE900F57F70 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		39BFBFFF2289790C000E6460 /* SourceColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceColorView.swift; sourceTree = "<group>"; };
 		39BFC0002289790C000E6460 /* ColorBarPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarPicker.swift; sourceTree = "<group>"; };
 		39BFC0012289790D000E6460 /* ColorIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorIndicatorView.swift; sourceTree = "<group>"; };
@@ -186,7 +190,6 @@
 				7B5C6F1E4B6DE4C105353008 /* Pods-ColorFinder.debug.xcconfig */,
 				96B1DE19EECA327D407D394A /* Pods-ColorFinder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,6 +245,8 @@
 				39623456228BF9C200E8256D /* FilterViewController.swift */,
 				39623458228C12B700E8256D /* ImageShareViewController.swift */,
 				39C6D829229BC6C800A58336 /* SubscriptionViewController.swift */,
+				3972951D229E513D0057845E /* TermsViewController.swift */,
+				39BD93D3229E7BE900F57F70 /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -384,11 +389,13 @@
 				39B5C65E228BF299009184A3 /* AlbumViewController.swift in Sources */,
 				BE5D7182222E95A200F200DE /* ColorCameraViewController.swift in Sources */,
 				39BFC0082289790D000E6460 /* ColorBarView.swift in Sources */,
+				39BD93D4229E7BE900F57F70 /* BaseViewController.swift in Sources */,
 				39B5C65D228BF299009184A3 /* AlbumTableCell.swift in Sources */,
 				39BFC01022897919000E6460 /* RGB.swift in Sources */,
 				BE5D7184222E95C300F200DE /* CameraSessionManager.swift in Sources */,
 				39BFC0142289791F000E6460 /* UIColor+Values.swift in Sources */,
 				39B5C65C228BF299009184A3 /* AlbumManager.swift in Sources */,
+				3972951E229E513D0057845E /* TermsViewController.swift in Sources */,
 				BE5D7188222E95DF00F200DE /* DBColorNames.m in Sources */,
 				394DFB40228A6EAD0012C384 /* ColorPickerViewController.swift in Sources */,
 				39BFC00A2289790D000E6460 /* ColorSquareView.swift in Sources */,

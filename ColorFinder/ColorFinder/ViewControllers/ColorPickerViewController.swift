@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorPickerViewController: UIViewController {
+class ColorPickerViewController: BaseViewController {
 
     @IBOutlet weak var squareHeightLayout: NSLayoutConstraint!
     @IBOutlet weak var squareWidthLyout: NSLayoutConstraint!
