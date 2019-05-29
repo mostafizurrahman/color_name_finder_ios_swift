@@ -13,6 +13,7 @@ class FilterViewController: CMFilterViewController {
     @IBOutlet weak var colorSquarePicker: ColorSquarePicker!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var lockView: UIView!
     
     @IBOutlet weak var widthLayout: NSLayoutConstraint!
     @IBOutlet weak var heightLayout: NSLayoutConstraint!
@@ -43,6 +44,11 @@ class FilterViewController: CMFilterViewController {
         }
         
         self.drawing_glk_view.layoutIfNeeded()
+        if UserDefaults.standard.bool(forKey: "subscribed") {
+            if self.lockView != nil {
+                self.lockView.isHidden = true
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +58,9 @@ class FilterViewController: CMFilterViewController {
         }
     }
     
+    @IBAction func openSubscription(_ sender: Any) {
+        self.performSegue(withIdentifier: "SubSegue", sender: nil)
+    }
     
     // MARK: - Navigation
 

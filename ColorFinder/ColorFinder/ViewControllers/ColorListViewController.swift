@@ -44,7 +44,12 @@ class ColorListViewController: BaseViewController {
         let notname = Notification.Name.init("color_saved")
         NotificationCenter.default.addObserver(self, selector: #selector(reloadColor(_ :)), name: notname, object: nil)
         
+        let sub_notification = Notification.Name.init("open_subscription")
+        NotificationCenter.default.addObserver(self, selector: #selector(subscribe(_ :)), name: sub_notification, object: nil)
 //        self.colorCollectionView.reloadData()
+    }
+    @objc func subscribe(_ not:Notification){
+        self.performSegue(withIdentifier: "SubSegue", sender: nil)
     }
     @objc func reloadColor(_ not:Notification){
         self.colorCollectionView.reloadData()

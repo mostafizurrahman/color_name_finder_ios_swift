@@ -10,13 +10,24 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    @IBOutlet weak var lockView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if UserDefaults.standard.bool(forKey: "subscribed") {
+            if self.lockView != nil {
+                self.lockView.isHidden = true
+            }
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func openSubscription(_ sender: Any) {
+        self.performSegue(withIdentifier: "SubSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

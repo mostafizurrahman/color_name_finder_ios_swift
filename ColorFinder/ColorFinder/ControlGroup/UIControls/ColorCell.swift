@@ -70,7 +70,12 @@ class ColorCell: UICollectionViewCell {
     
     @IBAction func copyToClipboard(_ sender: Any) {
         guard let color = self.color else {return}
-         UIPasteboard.general.string = color.toColor().hexString.replacingOccurrences(of: "#", with: "")
+        if !UserDefaults.standard.bool(forKey: "subscribed") {
+            let notification = Notification.init(name: Notification.Name.init("open_subscription"))
+            NotificationCenter.default.post(notification)
+            return
+        }
+        UIPasteboard.general.string = color.toColor().hexString.replacingOccurrences(of: "#", with: "")
         self.colorTittle.text = "Color copied!"
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.colorTittle.text = color.colorTitle

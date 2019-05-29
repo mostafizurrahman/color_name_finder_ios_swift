@@ -493,6 +493,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="locked"/>
+                                        <connections>
+                                            <action selector="openSubscription:" destination="VGz-zc-5Yf" eventType="touchUpInside" id="65H-Xk-VXw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -535,6 +538,7 @@
                     <connections>
                         <outlet property="colorIndicatorView" destination="oQ4-BQ-nsl" id="w7c-GQ-Fll"/>
                         <outlet property="colorNameLabel" destination="wTC-g1-3L0" id="tVQ-nR-UMn"/>
+                        <outlet property="lockView" destination="dn1-Vl-v1l" id="8m7-WX-Fll"/>
                         <outlet property="namePlateView" destination="jeW-Qg-Ue1" id="2Ki-hA-4vB"/>
                         <outlet property="previewLayerParent" destination="e5k-xX-Om0" id="qwu-jc-2UZ"/>
                         <outlet property="previewParentHeight" destination="ic1-Kh-ibU" id="ZyA-UN-PYS"/>
@@ -1039,17 +1043,22 @@
                                                 </view>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-vh-Atm">
-                                                <rect key="frame" x="164.5" y="85" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-vh-Atm">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <state key="normal" image="locked"/>
+                                                <connections>
+                                                    <action selector="openSubscription:" destination="6mn-fS-ygJ" eventType="touchUpInside" id="yMn-wU-EpM"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="CTl-vh-Atm" firstAttribute="centerX" secondItem="T4e-pE-cvI" secondAttribute="centerX" id="2rZ-13-uXY"/>
                                             <constraint firstItem="RNV-X5-ko8" firstAttribute="height" secondItem="T4e-pE-cvI" secondAttribute="height" id="AMI-fN-ojP"/>
+                                            <constraint firstItem="CTl-vh-Atm" firstAttribute="height" secondItem="T4e-pE-cvI" secondAttribute="height" id="JYZ-L8-zjt"/>
                                             <constraint firstItem="CTl-vh-Atm" firstAttribute="centerY" secondItem="T4e-pE-cvI" secondAttribute="centerY" id="PUe-CM-1xY"/>
                                             <constraint firstItem="RNV-X5-ko8" firstAttribute="centerY" secondItem="T4e-pE-cvI" secondAttribute="centerY" id="Uwa-7W-BWd"/>
+                                            <constraint firstItem="CTl-vh-Atm" firstAttribute="width" secondItem="T4e-pE-cvI" secondAttribute="width" id="cB0-Fc-Bh4"/>
                                             <constraint firstItem="RNV-X5-ko8" firstAttribute="width" secondItem="T4e-pE-cvI" secondAttribute="width" id="pO4-9y-Ata"/>
                                             <constraint firstItem="RNV-X5-ko8" firstAttribute="centerX" secondItem="T4e-pE-cvI" secondAttribute="centerX" id="uuZ-Ru-DX9"/>
                                         </constraints>
@@ -1107,6 +1116,7 @@
                         <outlet property="drawing_glk_view" destination="XMo-HQ-g1g" id="aFj-fD-bGS"/>
                         <outlet property="heightLayout" destination="gTB-I7-yEw" id="eEx-KA-C3V"/>
                         <outlet property="imageView" destination="l6l-kM-5u5" id="zvF-b6-NYQ"/>
+                        <outlet property="lockView" destination="T4e-pE-cvI" id="hbJ-Ds-1op"/>
                         <outlet property="slider" destination="XXB-on-9gl" id="Fho-Cq-dJZ"/>
                         <outlet property="widthLayout" destination="X73-0F-FMZ" id="eoq-0i-Jc8"/>
                         <segue destination="fXn-Se-d69" kind="show" identifier="ShareSegue" id="DeK-8D-jiO"/>
@@ -1667,6 +1677,9 @@ Thank you.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="288"/>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="locked"/>
+                                        <connections>
+                                            <action selector="openSubscription:" destination="2zt-ns-KVS" eventType="touchUpInside" id="Lz1-MP-tfT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1718,6 +1731,7 @@ Thank you.</string>
                         <outlet property="gLabel" destination="UGr-Ct-dCP" id="DiC-kk-KRc"/>
                         <outlet property="hLabel" destination="DJm-hm-dTc" id="k2o-xY-Jsh"/>
                         <outlet property="hexLabel" destination="WwI-HV-H4V" id="N0O-Ma-nwE"/>
+                        <outlet property="lockView" destination="MdO-eJ-Vos" id="7YX-CG-o56"/>
                         <outlet property="rLabel" destination="xSm-V1-kc6" id="tMn-Mb-9S4"/>
                         <outlet property="sLabel" destination="Brx-sI-Vgw" id="pjN-bE-Cqb"/>
                         <outlet property="squareHeightLayout" destination="jKv-Ev-tWv" id="ZhM-RI-yFc"/>
@@ -1739,7 +1753,7 @@ Thank you.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSV-IM-1p3">
-                                <rect key="frame" x="0.0" y="-23.5" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="-1.5" width="375" height="734"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-1a-zAa">
                                         <rect key="frame" x="169" y="348.5" width="37" height="37"/>
@@ -1753,10 +1767,10 @@ Thank you.</string>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-gQ-tGQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="400"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrW-bv-MbZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="GLL-6R-9et"/>
@@ -1868,7 +1882,7 @@ Get Transformed Color from given color</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joy-0b-b7U">
-                                <rect key="frame" x="8" y="28" width="71" height="33"/>
+                                <rect key="frame" x="8" y="72" width="71" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
                                 <state key="normal" title="   SKIP   ">
                                     <color key="titleColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -2002,17 +2016,17 @@ Get Transformed Color from given color</string>
         <!--Terms View Controller-->
         <scene sceneID="EOC-Fc-jyW">
             <objects>
-                <viewController id="wd5-62-Ud3" customClass="TermsViewController" customModule="erica" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wd5-62-Ud3" customClass="TermsViewController" customModule="ColorFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="muq-bA-Q9L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-z0-FCV">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1z-ec-wqY">
-                                <rect key="frame" x="16" y="20" width="57" height="30"/>
+                                <rect key="frame" x="16" y="64" width="57" height="30"/>
                                 <state key="normal" title="   SKIP   "/>
                                 <connections>
                                     <action selector="close:" destination="wd5-62-Ud3" eventType="touchUpInside" id="ua5-xi-HyS"/>
@@ -2052,7 +2066,7 @@ Get Transformed Color from given color</string>
         <image name="twitter" width="55" height="55"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uLJ-U5-4Cp"/>
+        <segue reference="Vx2-7c-xgz"/>
         <segue reference="wzo-28-MVs"/>
     </inferredMetricsTieBreakers>
 </document>
