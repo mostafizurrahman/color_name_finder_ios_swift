@@ -8,18 +8,88 @@
 
 import UIKit
 
+import SwiftyStoreKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static let SIDF = "com.boobsly.subscription.4.99"
+    static let SIDF = "com.imageapp.colorfind1.99"
     static let SS = "a91b1b47800b4786818603b7898223f2"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         _ = ColorGenerator.ColorHomo(red: 2, green: 2, blue: 2, hueAngle: 100.0)
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+        if let value = UserDefaults.standard.value(forKey: "subscription_id") {
+            if let sub = value as? String {
+                self.varifyPurchase(Product: sub)
+            }
+        }
+        
+        
+        
         _ = ColorSaver.shared
         return true
+    }
+    
+    func varifyPurchase(Product productId:String){
+        
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: AppDelegate.SS)
+        
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
+            switch result {
+            case .success(let receipt):
+                
+                // Verify the purchase of Consumable or NonConsumable
+                let purchaseResult = SwiftyStoreKit.verifyPurchase(
+                    productId: productId,
+                    inReceipt: receipt)
+                
+                switch purchaseResult {
+                case .purchased(let receiptItem):
+                    //Show Dilog message from here\
+                    
+                    print("\(productId) is purchased: \(receiptItem)")
+                    
+                    if productId.elementsEqual(AppDelegate.SIDF)   {
+                        
+                        if let expData = receiptItem.subscriptionExpirationDate {
+                            guard let nextDate = Calendar.current.date(byAdding: .month, value: 1, to: expData) else {
+                                return
+                            }
+                            if nextDate < Date() {
+                                UserDefaults.standard.set(false, forKey: "ad_removed")
+                                UserDefaults.standard.synchronize()
+                            } else {
+                                UserDefaults.standard.set(true, forKey: "ad_removed")
+                                UserDefaults.standard.synchronize()
+                                NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "remove_ad_notification")))
+                            }
+                            
+                        }
+                    }
+                case .notPurchased:
+                    print("The user has never purchased \(productId)")
+                }
+            case .error(let error):
+                print("Receipt verification failed: \(error)")
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

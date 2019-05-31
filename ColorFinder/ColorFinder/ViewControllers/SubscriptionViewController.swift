@@ -27,8 +27,6 @@ class SubscriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         SwiftyStoreKit.retrieveProductsInfo([AppDelegate.SIDF]) { result in
             
             if let product = result.retrievedProducts.first {
@@ -71,8 +69,6 @@ class SubscriptionViewController: UIViewController {
             self.gradientView.backgroundColor = UIColor.clear
             gradientView.layer.addSublayer(gradientLayer)
         }
-        let image = UIImage(named: "ok")
-        self.backgroundImage.image = image
     }
     
     override func viewDidAppear(_ animated: Bool) {

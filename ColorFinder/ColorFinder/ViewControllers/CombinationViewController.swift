@@ -68,6 +68,10 @@ class CombinationViewController: BaseViewController {
     }
     
     @objc func selectedColor( _ sender:UITapGestureRecognizer){
+        if !UserDefaults.standard.bool(forKey: "subscribed"){
+            self.performSegue(withIdentifier: "SubSegue", sender: nil)
+            return
+        }
         if let _sp = self.selectedPicker {
             _sp.layer.borderWidth = 0
         }
